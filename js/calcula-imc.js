@@ -1,3 +1,6 @@
+//CALCULAR IMC
+
+
 var titulo = document.querySelector("h1");
 titulo.textContent = "Aparecida Melhor Nutricionista";
 
@@ -33,22 +36,21 @@ for (var i = 0; i < pacientes.length; i++) {
   }
 
   if (alturaEhValida && pesoEhValido) {
-    var imc = peso / (altura * altura);
-
+    var imc = calculaImc(peso,altura);
     tdImc.textContent = imc;
   }
 }
+function calculaImc(peso,altura){
+  var imc =0;
+  imc = peso/(altura*altura);
+  return imc.toFixed(2);
+}
 
 
-var botaoAdicionar=document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener("click",function(event){
-   event.preventDefault();
-   console.log("Oi!, eu sou o botão e fui clicado");
-});
 
-titulo.addEventListener("click",function(){
-  console.log("Olá eu fui clicado");
- });
+//titulo.addEventListener("click",function(){
+//  console.log("Olá eu fui clicado");
+ //});
  //titulo.addEventListener("click",function(){console.log("olha! posso também chamar uma função anonima");});
 
 
