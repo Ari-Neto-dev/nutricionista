@@ -4,7 +4,7 @@ botaoAdicionar.addEventListener("click", function (event) {
 
   var form = document.querySelector("#form-adiciona");
   var paciente = obtemPacientesDoFormulario(form);
-  console.log(paciente);
+ // console.log(paciente);
   var pacienteTr = montaTr(paciente);
 
   var erros = validaPaciente(paciente);
@@ -18,6 +18,8 @@ if(erros.length > 0){
   var tabela = document.querySelector("#tabela-pacientes");
   tabela.appendChild(pacienteTr);
   form.reset();
+  var mensagensErro=document.querySelector("#mensagens-erro");
+  mensagensErro.innerHTML="";
 
 });
 
@@ -55,7 +57,7 @@ function montaTr(paciente) {
   pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
   pacienteTr.appendChild(montaTd(paciente.altura, "info-altura"));
   pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
-  pacienteTr.appendChild(montaTd(paciente.gordura, "info-gordura"));
+  pacienteTr.appendChild(montaTd(paciente.imc, "info-gordura"));
 
   
   return pacienteTr;
